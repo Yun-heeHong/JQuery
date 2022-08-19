@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text">
+    <button onclick="getTest()">확인</button>
+<!-- select box -->
+    <select id="manu">
+        <option value="돈까스">돈까스</option>
+        <option value="치즈라면">치즈라면</option>
+        <option value="볶음밥">볶음밥</option>
+        <option value="함박스테이크">함박스테이크</option>
+    </select>
+<!-- radio button  /name 오타조심-->
+SKT : <input type="radio" name ="phone" value="SKT">
+LG : <input type="radio" name ="phone" value="LG">
+KT : <input type="radio" name="phone" value="KT">
+<!-- textarea -->
+<textarea id="board" cols="30" rows="10"></textarea>
+
+<!-- 문제2>메뉴에서 볶음밥을 선택했으면 볶음밥을 선택했군요! 출력 -->
+<button onclick="getTest02()">메뉴확인</button>
+<!-- 문제1>SKT를 선택하면 SKT 고객이군요!라는 문구 출력!!-->
+<button onclick="getTest03()">통신사확인</button>
+
+</body>
+<script>
+    //자바스크립트(js)는 리턴타입이 없다.
+    function getTest(){
+       //문1> input에 입력된 값을 출력하시오.
+       var name = document.getElementById("name").value;
+            console.log('이름은: '+name);          
+        var manu = document.getElementById("manu").value;
+             console.log(manu);
+        var phone = document.querySelector("input[name=phone]:checked").value;
+            console.log(phone);
+        var board= document.getElementById('board').value;
+             console.log(board);
+    }
+    function getTest02(){
+    var manu = document.getElementById("manu").value;   
+        console.log(manu);
+           if(manu== '볶음밥'){
+                console.log("볶음밥을 선택했군요!!"); }
+           }
+    function getTest03(){
+    var phone = document.querySelector("input[name=phone]:checked").value; 
+         console.log(phone);            
+            
+            if(phone == 'SKT'){
+                console.log("SKT 고객이시군요!!");
+           }            
+    }
+</script>
+</html>
